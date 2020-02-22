@@ -11,7 +11,7 @@ const App = () => {
       <BrowserRouter>
         <Navigation />
         <Route path="/" exact component={Main} />
-        <Route path="/visual" exact component={Visual} />
+        {/* <Route path="/visual" exact component={Visual} /> */}
         <Route path="/about" exact component={About} />
       </BrowserRouter>
     </div>

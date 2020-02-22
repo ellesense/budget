@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 const Navigation = () => {
@@ -11,9 +11,9 @@ const Navigation = () => {
         <Link to="/" className="item">
           <h3>LIST</h3>
         </Link>
-        <Link to="/visual" className="item">
+        {/* <Link to="/visual" className="item">
           <h3>VISUALIZE</h3>
-        </Link>
+        </Link> */}
         <Link to="/about" className="item">
           <h3>ABOUT</h3>
         </Link>
