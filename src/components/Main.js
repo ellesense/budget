@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import uuid from "uuid/v4";
 import Alert from "./Alert";
 import ExpenseForm from "./Forms/ExpenseForm";
-// import IncomeForm from "./Forms/IncomeForm";
+import Visual from "./Visual";
 import List from "./List";
 import Total from "./Total";
 
@@ -122,22 +122,14 @@ function Main() {
                 </div>
               </div>
 
-              {/* <div className="ui horizontal divider">...</div>
-              <IncomeForm /> */}
               <div className="ui horizontal divider">...</div>
 
-              {/* <Total
-                header={"TOTAL MONTHLY INCOME"}
-                amount={[{ amount: 999999 }]}
-              /> */}
               <Total
                 header={"TOTAL PLANNED MONTHLY EXPENSES"}
                 amount={expenses}
               />
-              {/* <Total
-                header={"REMAINING MONTHLY BALANCE"}
-                amount={[{ amount: 9999 }]}
-              /> */}
+
+              <Visual items={expenses} />
             </div>
           </div>
           <div className="column">

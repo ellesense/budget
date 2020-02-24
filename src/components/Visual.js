@@ -1,24 +1,46 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Pie } from "react-chartjs-2";
 
-const initState = {
-  datasets: [
-    {
-      data: [10, 20, 30, 23, 50, 5, 23],
-      label: "Expenses",
-      // auto-generate RGBA based on number of expenses
-      backgroundColor: ["#C48C9F", "#3C2656", "#FC9E5F"]
-    }
-  ],
-  labels: ["Gas", "Rent", "Lunch"],
-  options: { pieceLabel: { render: "value" } }
-};
+const Visual = ({ items }) => {
+  const rgbArray = [];
+  // useEffect(() => {
+  //   items.forEach(item => {
+  //     let r = Math.floor(Math.random() * 255);
+  //     let g = Math.floor(Math.random() * 255);
+  //     let b = Math.floor(Math.random() * 255);
+  //     let rgb = "rgb(" + r + "," + g + "," + b + ")";
+  //     rgbArray.push(rgb);
+  //   });
+  // }, [items, rgbArray]);
+  // console.log(rgbArray);
 
-const Visual = () => {
+  items.forEach(item => {
+    let r = Math.floor(Math.random() * 255);
+    let g = Math.floor(Math.random() * 255);
+    let b = Math.floor(Math.random() * 255);
+    let rgb = "rgb(" + r + "," + g + "," + b + ")";
+    rgbArray.push(rgb);
+  });
+
+  const chart = {
+    datasets: [
+      {
+        data: items.map(item => {
+          return item.amount;
+        }),
+        label: "Expenses",
+        // auto-generate RGBA based on number of items
+        backgroundColor: rgbArray
+      }
+    ],
+    labels: items.map(item => {
+      return item.type;
+    })
+  };
+
   return (
-    <div className="ui container">
-      <h3>Total Expense: $9999</h3>
-      <Pie data={initState} />
+    <div>
+      <Pie data={chart} height={400} options={{ maintainAspectRatio: false }} />
     </div>
   );
 };

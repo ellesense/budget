@@ -2,6 +2,10 @@ import React from "react";
 import Item from "./Item";
 
 const List = ({ expensesList, handleDelete, handleEdit, handleClear }) => {
+  const descendingExpensesList = [...expensesList].sort((a, b) =>
+    parseInt(a.amount) > parseInt(b.amount) ? -1 : 1
+  );
+
   return (
     <div>
       <div style={{ marginTop: "44px" }}>
@@ -9,7 +13,7 @@ const List = ({ expensesList, handleDelete, handleEdit, handleClear }) => {
       </div>
 
       <div style={{ margin: "13px 0" }}>
-        {expensesList.length > 0 && (
+        {descendingExpensesList.length > 0 && (
           <button
             className="ui red mini basic button right "
             aria-label="clear the list button"
@@ -22,7 +26,7 @@ const List = ({ expensesList, handleDelete, handleEdit, handleClear }) => {
       </div>
 
       <div className="ui relaxed divided list">
-        {expensesList.map(expense => {
+        {descendingExpensesList.map(expense => {
           return (
             <Item
               key={expense.id}
