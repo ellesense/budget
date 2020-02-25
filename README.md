@@ -1,6 +1,6 @@
 ## Website
 
-https://not-yet-deployed.com
+https://pedantic-chandrasekhar-d7fdef.netlify.com/about
 
 ## Why I Made This
 
