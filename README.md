@@ -1,6 +1,6 @@
 ## Website
 
-https://pedantic-chandrasekhar-d7fdef.netlify.com/about
+https://pedantic-chandrasekhar-d7fdef.netlify.com
 
 ## Why I Made This
 
